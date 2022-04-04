@@ -11,6 +11,26 @@
     <h1>Hello from HTML!</h1>
     <div id="app">
       {{ message }}
+        <button @click="createProduct">Create</button>
+        <div>Name<input type="text" @model="name"/></div>
+        <div>Price<input type="text" @model="price"/></div>
+        <div>Description<input type="text" @model="description"/></div>
+        <div>Image_URL<input type="text" @model="image_url"/></div>
+      </div>
+      <div>
+        <button @click="getProduct">Refresh</button>
+      </div>
+      <div>
+      <div>
+        <button @click="updateProduct">Update</button>
+      </div>
+      <div>
+        <button @click="deleteProduct">Update</button>
+      </div>
+      <div v-for=""product in products>
+        <h3> {{ product.id }}. {{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+      </div>
     </div>
   </body>
 </html>
